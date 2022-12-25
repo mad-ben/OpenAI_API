@@ -1,6 +1,7 @@
 import bot from './assets/bot.svg';
 import user from './assets/user.svg';
 
+// Access HTML elements manually
 const form = document.querySelector('form');
 const chatContainer = document.querySelector('#chat_container');
 
@@ -10,8 +11,10 @@ function loader(element){
   element.textContent = '';
 
   loadInterval = setInterval(() => {
+    // Update the text content of the loading indicator
     element.textContent += ".";
 
+    // If the loading indicator has reached three dots, reset it
     if (element.textContent === '....'){
       element.textContent = '';
     }
@@ -19,16 +22,16 @@ function loader(element){
 }
 
 function typeText(element, text) {
-  let index=0;
+  let index = 0;
 
   let interval = setInterval(() => {
     if (index < text.length) {
-      element.innerHTML += text.chatAt(index);
+      element.innerHTML += text.charAt(index)
       index++
     }else{
       clearInterval(interval);
     }
-  }, 200)
+  }, 20)
 }
 
 function generetaUniqueId() {
@@ -39,18 +42,19 @@ function generetaUniqueId() {
   return `id-${timestamp}-${hexadecimalString}`;
 }
 
-function chatStripe (isAI, value, uniqueId) {
+
+function chatStripe (isAi, value, uniqueId) {
   return (
     `
     <div class="wrapper ${isAi && 'ai'}">
       <div class="chat">
-        <div className="profile">
+        <div class="profile">
           <img 
-            src="${isAI ? bot : user}"
-            alt="${isAI ? 'bot' : 'user'}"          
+            src="${isAi ? bot : user}"
+            alt="${isAi ? 'bot' : 'user'}"          
           />
         </div>
-        <div className="message" id=${uniqueId}>
+        <div class="message" id=${uniqueId}>
           ${value}
         </div>
       </div>
@@ -60,12 +64,15 @@ function chatStripe (isAI, value, uniqueId) {
 }
 
 const handleSubmit = async (e) => {
+
+  //Default behavior is to reload the browser after you submit form. This line prevents it
   e.preventDefault();
   
   const data=new FormData(form);
 
   // users's chat stripe
   chatContainer.innerHTML += chatStripe(false, data.get('prompt'));
+
   // clear form
   form.reset();
 
@@ -74,9 +81,10 @@ const handleSubmit = async (e) => {
   const uniqueId = generetaUniqueId(); //generate unique id for bot message
   chatContainer.innerHTML += chatStripe(true, " ", uniqueId);
 
+  //scroll when typing a message
   chatContainer.scrollTop = chatContainer.scrollHeight; 
 
-  const messageDiv = document.getElementById(uniqueId);//fetch message
+  const messageDiv = document.getElementById(uniqueId); //fetch message
   loader(messageDiv); //load AI answer
 }
 
