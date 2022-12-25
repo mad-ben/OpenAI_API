@@ -5,6 +5,9 @@ import {Configuration, OpenAIApi} from 'openai';
 
 dotenv.config(); // make use of dot env
 
+//Debug API Key. Put .env file into server folder
+//console.log(process.env.OPENAI_API_KEY)
+
 /* creates open ai configuration based on API key*/ 
 const configuration = new Configuration({
     apiKey: process.env.OPENAI_API_KEY,

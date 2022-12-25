@@ -85,7 +85,36 @@ const handleSubmit = async (e) => {
   chatContainer.scrollTop = chatContainer.scrollHeight; 
 
   const messageDiv = document.getElementById(uniqueId); //fetch message
+
   loader(messageDiv); //load AI answer
+
+  //fetch data from server -> bot's response
+  const response = await fetch('http://localhost:5000',{
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      prompt: data.get('prompt')//message from text area on the screen
+    })
+  }) 
+
+  clearInterval(loadInterval); //Clear interval
+  messageDiv.innerHTML = '';
+
+  if(response.ok) {
+    const data = await response.json();
+    const parsedData = data.bot.trim();
+
+    //Pass to function created before
+    typeText(messageDiv, parsedData);
+  }else {
+    const err = await response.text();
+
+    messageDiv.innerHTML = "Something went wrong";
+
+    alert(err);
+  }
 }
 
 form.addEventListener('submit', handleSubmit); // when pressed submit button call event
