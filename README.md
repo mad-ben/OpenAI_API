@@ -1,4 +1,4 @@
 # OpenAI_API
 OpenAI API
 
-deploy server side wirh render.com for free
+deploy server side with render.com for free
