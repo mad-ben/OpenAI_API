@@ -9,14 +9,14 @@
 
 body {
   /*background: #343541;*/
-  background: linear-gradient(to right, #3f51b1, #ff4081);
+  background: linear-gradient(to bottom, #3f51b1, #6200ff);
 }
 
 #app {
   width: 100vw;
   height: 100vh;
   /*background: #343541;*/
-  background: linear-gradient(to right, #3f51b1, #ff4081);
+  background: linear-gradient(to bottom, #3f51b1, #6200ff);
   display: flex;
   flex-direction: column;
   align-items: center;
