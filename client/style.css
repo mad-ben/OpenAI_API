@@ -8,15 +8,14 @@
 }
 
 body {
-  /*background: #343541;*/
-  background: linear-gradient(to right, #3f51b1, #ff4081);
+  background: #343541;
 }
 
 #app {
   width: 100vw;
   height: 100vh;
-  background: #343541;
-
+  /*background: #343541;*/
+  background: linear-gradient(to right, #3f51b1, #ff4081);
   display: flex;
   flex-direction: column;
   align-items: center;
