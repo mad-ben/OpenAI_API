@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300;400;500;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Alegreya Sans", sans-serif;
+  font-family: 'Inconsolata', monospace;
 }
 
 body {
@@ -124,7 +124,7 @@ form {
 
   outline-style: solid;
   outline-color: #00ff95;
-  outline-width: 2px;
+  outline-width: 1px;
 }
 
 textarea {
@@ -154,4 +154,29 @@ form img {
 
 footer {
   font-size: 30px;
+  color:white;
+  text-align:center;
+}
+
+p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  color:white;
+  /*text-decoration: underline;*/
+  text-align:center;
+}
+
+h3 {
+  color:white;
+  text-align:center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+select{
+  background: #1d1d24;
+  color:white;
 }

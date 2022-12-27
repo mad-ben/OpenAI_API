@@ -9,14 +9,22 @@
   </head>
   <body>
     <div id="app">
+      <h1>Jericho - Your Virtual Assistant</h1>
+      <div style="text-align:center;">
+        <h3>Select your virtual assistant</h1>
+          <select name="bots" id="botsID">
+            <option value="gpt">General Assistant</option>
+            <option value="codex">Coding Assistant</option>
+          </select>
+      </div>
       <div id="chat_container"></div>
-
+      
       <form>
-        <textarea name="prompt" rows="1" cols="1" placeholder="Ask chat ChatGPT..."></textarea>
-        <button type="submit"><image src="assets/send.svg" alt="send" /></button>
+        <textarea name="prompt" rows="1" cols="1" placeholder="Ask Jericho..."></textarea>
+        <button type="submit"><image src="assets/Vector.svg" alt="send" /></button>
       </form>
       <footer>
-        <p style="color:white">Virtual Assistant by Andriy Kalysh</p>
+        <p style="font-size:50%">by Andriy Kalysh</p>
       </footer>
     </div>
     
