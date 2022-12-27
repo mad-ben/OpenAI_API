@@ -121,6 +121,10 @@ form {
   display: flex;
   flex-direction: row;
   gap: 10px;
+
+  outline-style: solid;
+  outline-color: #00ff95;
+  outline-width: 2px;
 }
 
 textarea {
