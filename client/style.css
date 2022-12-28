@@ -36,6 +36,10 @@ body {
 
   padding-bottom: 20px;
   scroll-behavior: smooth;
+
+  outline-style: solid;
+  outline-color: #00ff95;
+  outline-width: 1px;
 }
 
 /* hides scrollbar */
