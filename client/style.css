@@ -40,6 +40,8 @@ body {
   outline-style: solid;
   outline-color: #00ff95;
   outline-width: 1px;
+
+  margin-bottom: 5px;
 }
 
 /* hides scrollbar */
