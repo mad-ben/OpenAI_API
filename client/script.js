@@ -68,7 +68,13 @@ const handleSubmit = async (e) => {
   //Default behavior is to reload the browser after you submit form. This line prevents it
   e.preventDefault();
   
+  //Get data from textbox
   const data=new FormData(form);
+  //Get data from comboBox
+  const comboBox = document.getElementById('comboBox');
+  const selectedOption = comboBox.options[comboBox.selectedIndex].value;
+
+  //console.log(selectedOption);
 
   // users's chat stripe
   chatContainer.innerHTML += chatStripe(false, data.get('prompt'));

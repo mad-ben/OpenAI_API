@@ -22,7 +22,7 @@ app.use(cors()); // use cors
 app.use(express.json()); // allow to pass json from frontend to backend
 app.get('/', async (req,res)=>{
     res.status(200).send({
-        message: 'Hello from Codex',
+        message: 'Hello from Jericho',
     })
 })
 
