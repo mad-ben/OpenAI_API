@@ -29,9 +29,12 @@ app.get('/', async (req,res)=>{
 app.post('/', async (req,res) => {
     try {
         const prompt = req.body.prompt;
+        const aimodel = req.body.model;
+
+        console.log(aimodel);
 
         const response = await openai.createCompletion({
-            model: "text-davinci-003",
+            model: `${aimodel}`,
             prompt: `${prompt}`,
             temperature: 0.8,
             max_tokens: 4000,
