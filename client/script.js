@@ -3,13 +3,14 @@ import user from './assets/user.svg';
 import { aiModel1,aiModel2 } from './public/ai_models';
 
 // Ai model to send with default values
-const aiModelToSend = {
+var aiModelToSend = {
   model: "text-davinci-003",
   temperature: 0.3,
   max_tokens: 100,
   top_p:1,
   frequency_penalty: 0,
   presence_penalty: 0,
+  stop: "",
 };
 
 
@@ -85,7 +86,21 @@ const handleSubmit = async (e) => {
   /** Get data from comboBox and send values to the server */ 
 
   const comboBox = document.getElementById('comboBox');
-  //const selectedOption = comboBox.options[comboBox.selectedIndex].value;
+  const selectedOption = comboBox.selectedIndex;
+
+  switch(selectedOption){
+    case 0:
+      aiModelToSend = aiModel1;
+      console.log(comboBox.options[selectedOption].value);
+      break;
+    case 1:
+      aiModelToSend = aiModel2;
+      console.log(comboBox.options[selectedOption].value);
+      break;
+    default:
+      aiModelToSend = aiModel1;
+      console.log(comboBox.options[selectedOption].value);   
+  }
 
   //console.log(comboBox.selectedIndex);
   

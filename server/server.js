@@ -31,16 +31,21 @@ app.post('/', async (req,res) => {
         const prompt = req.body.prompt;
         const aimodel = req.body.model;
 
-        console.log(aimodel);
+        const temp = Number(aimodel.temperature);
+        const maxTokens = Number(aimodel.max_tokens);
+        const topP = Number(aimodel.top_p);
+        const fPen = Number(aimodel.frequency_penalty);
+        const pPen = Number(aimodel.presence_penalty);
 
         const response = await openai.createCompletion({
             model: `${aimodel.model}`,
             prompt: `${prompt}`,
-            temperature: `${aimodel.temperature}`,
-            max_tokens: `${aimodel.max_tokens}`,
-            top_p: `${aimodel.top_p}`,
-            frequency_penalty: `${aimodel.frequency_penalty}`,
-            presence_penalty: `${aimodel.presence_penalty}`,
+            temperature: temp,
+            max_tokens: maxTokens,
+            top_p: topP,
+            frequency_penalty: fPen,
+            presence_penalty: pPen,
+            stop: `${aimodel.stop}`,
         });
 
         res.status(200).send({
