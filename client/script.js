@@ -1,5 +1,17 @@
 import bot from './assets/bot.svg';
 import user from './assets/user.svg';
+import { aiModel1,aiModel2 } from './public/ai_models';
+
+// Ai model to send with default values
+const aiModelToSend = {
+  model: "text-davinci-003",
+  temperature: 0.3,
+  max_tokens: 100,
+  top_p:1,
+  frequency_penalty: 0,
+  presence_penalty: 0,
+};
+
 
 // Access HTML elements manually
 const form = document.querySelector('form');
@@ -70,11 +82,13 @@ const handleSubmit = async (e) => {
   
   //Get data from textbox
   const data=new FormData(form);
-  //Get data from comboBox
-  const comboBox = document.getElementById('comboBox');
-  const selectedOption = comboBox.options[comboBox.selectedIndex].value;
+  /** Get data from comboBox and send values to the server */ 
 
-  //console.log(selectedOption);
+  const comboBox = document.getElementById('comboBox');
+  //const selectedOption = comboBox.options[comboBox.selectedIndex].value;
+
+  //console.log(comboBox.selectedIndex);
+  
 
   // users's chat stripe
   chatContainer.innerHTML += chatStripe(false, data.get('prompt'));
@@ -102,7 +116,7 @@ const handleSubmit = async (e) => {
     },
     body: JSON.stringify({
       prompt: data.get('prompt'), //message from text area on the screen
-      model: selectedOption // Selected option
+      model: aiModelToSend // Selected option
     })
   }) 
 
