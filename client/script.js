@@ -62,9 +62,9 @@ function chatStripe (isAi, value, uniqueId) {
     <div class="wrapper ${isAi && 'ai'}">
       <div class="chat">
         <div class="profile">
-          <img 
+          <img
             src="${isAi ? bot : user}"
-            alt="${isAi ? 'bot' : 'user'}"          
+            alt="${isAi ? 'bot' : 'user'}"
           />
         </div>
         <div class="message" id=${uniqueId}>
@@ -80,10 +80,10 @@ const handleSubmit = async (e) => {
 
   //Default behavior is to reload the browser after you submit form. This line prevents it
   e.preventDefault();
-  
+
   //Get data from textbox
   const data=new FormData(form);
-  /** Get data from comboBox and send values to the server */ 
+  /** Get data from comboBox and send values to the server */
 
   const comboBox = document.getElementById('comboBox');
   const selectedOption = comboBox.selectedIndex;
@@ -99,11 +99,11 @@ const handleSubmit = async (e) => {
       break;
     default:
       aiModelToSend = aiModel1;
-      console.log(comboBox.options[selectedOption].value);   
+      console.log(comboBox.options[selectedOption].value);
   }
 
   //console.log(comboBox.selectedIndex);
-  
+
 
   // users's chat stripe
   chatContainer.innerHTML += chatStripe(false, data.get('prompt'));
@@ -117,7 +117,7 @@ const handleSubmit = async (e) => {
   chatContainer.innerHTML += chatStripe(true, " ", uniqueId);
 
   //scroll when typing a message
-  chatContainer.scrollTop = chatContainer.scrollHeight; 
+  chatContainer.scrollTop = chatContainer.scrollHeight;
 
   const messageDiv = document.getElementById(uniqueId); //fetch message
 
@@ -133,7 +133,7 @@ const handleSubmit = async (e) => {
       prompt: data.get('prompt'), //message from text area on the screen
       model: aiModelToSend // Selected option
     })
-  }) 
+  })
 
   clearInterval(loadInterval); //Clear interval
   messageDiv.innerHTML = '';
