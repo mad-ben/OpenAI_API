@@ -14,9 +14,9 @@
         <h3>What do need help in?</h1>
           <select name="bots" id="comboBox">
             <optgroup label="Text Davinci"></optgroup>
-            <option value="text-davinci-003">Small Essays</option>
-            <option value="text-davinci-003">Q&A</option>
-            <option value="text-davinci-003">Language Translation</option>
+            <option value="text-davinci-003">Strict</option>
+            <option value="text-davinci-003">Moderate</option>
+            <option value="text-davinci-003">Fully Creative</option>
             <optgroup label="Codex"></optgroup>
             <option value="code-davinci-002">Code Generation</option>
           </select>
@@ -25,7 +25,9 @@
       <form>
         <textarea name="prompt" rows="1" cols="1" placeholder="Ask Jericho..."></textarea>
         <button type="submit">
-            <image src="assets/arrow-down.svg" alt="send" class="rotateimg90"/>
+            <div class="circular">
+                <image src="assets/arrow-down.svg" alt="send" class="rotateimg90"/>
+            </div>
         </button>
       </form>
 

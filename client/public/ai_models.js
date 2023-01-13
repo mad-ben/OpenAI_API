@@ -2,7 +2,7 @@
 export const aiModel1 = {
     model: "text-davinci-003",
     temperature: 0,
-    max_tokens: 1000,
+    max_tokens: 100,
     top_p:1,
     frequency_penalty: 0,
     presence_penalty: 0,
@@ -23,7 +23,7 @@ export const aiModel2 = {
 // Coding Model QnA
 export const aiModel3 = {
     model: "text-davinci-003",
-    temperature: 0,
+    temperature: 0.5,
     max_tokens: 100,
     top_p:1,
     frequency_penalty: 0.0,
@@ -34,7 +34,7 @@ export const aiModel3 = {
 // Coding Model Translation
 export const aiModel4 = {
     model: "text-davinci-003",
-    temperature: 0.3,
+    temperature: 1,
     max_tokens: 100,
     top_p:1,
     frequency_penalty: 0.0,

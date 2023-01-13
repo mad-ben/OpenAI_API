@@ -1,4 +1,4 @@
-import bot from './assets/bot.svg';
+import bot from './public/ai_icon2.png';
 import user from './assets/user.svg';
 import { aiModel1,aiModel2,aiModel3,aiModel4 } from './public/ai_models';
 
@@ -91,23 +91,23 @@ const handleSubmit = async (e) => {
   switch(selectedOption){
     case 0:
       aiModelToSend = aiModel1;
-      console.log(comboBox.selectedIndex);
+      //console.log(comboBox.selectedIndex);
       break;
     case 1:
       aiModelToSend = aiModel3;
-      console.log(comboBox.selectedIndex);
+      //console.log(comboBox.selectedIndex);
       break;
     case 2:
-        aiModelToSend = aiModel4
-        console.log(comboBox.selectedIndex);
-        break;
+      aiModelToSend = aiModel4
+      //console.log(comboBox.selectedIndex);
+      break;
     case 3:
       aiModelToSend = aiModel2;
-      console.log(comboBox.selectedIndex);
+      //console.log(comboBox.selectedIndex);
       break;
     default:
       aiModelToSend = aiModel1;
-      console.log(comboBox.selectedIndex);
+      //console.log(comboBox.selectedIndex);
   }
 
   //console.log(comboBox.selectedIndex);
