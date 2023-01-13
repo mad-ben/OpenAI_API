@@ -1,6 +1,6 @@
 import bot from './assets/bot.svg';
 import user from './assets/user.svg';
-import { aiModel1,aiModel2 } from './public/ai_models';
+import { aiModel1,aiModel2,aiModel3,aiModel4 } from './public/ai_models';
 
 // Ai model to send with default values
 var aiModelToSend = {
@@ -91,15 +91,23 @@ const handleSubmit = async (e) => {
   switch(selectedOption){
     case 0:
       aiModelToSend = aiModel1;
-      console.log(comboBox.options[selectedOption].value);
+      console.log(comboBox.selectedIndex);
       break;
     case 1:
+      aiModelToSend = aiModel3;
+      console.log(comboBox.selectedIndex);
+      break;
+    case 2:
+        aiModelToSend = aiModel4
+        console.log(comboBox.selectedIndex);
+        break;
+    case 3:
       aiModelToSend = aiModel2;
-      console.log(comboBox.options[selectedOption].value);
+      console.log(comboBox.selectedIndex);
       break;
     default:
       aiModelToSend = aiModel1;
-      console.log(comboBox.options[selectedOption].value);
+      console.log(comboBox.selectedIndex);
   }
 
   //console.log(comboBox.selectedIndex);
@@ -155,7 +163,7 @@ const handleSubmit = async (e) => {
 
 form.addEventListener('submit', handleSubmit); // when pressed submit button call event
 form.addEventListener('keyup', (e) => {
-  if (e.keyCode === 13 && !evt.shiftKey) {
+  if (e.keyCode == 13 && !e.shiftKey) {
     handleSubmit(e); //same event called by pressing enter key. 13 is enter key code
   }
 })
