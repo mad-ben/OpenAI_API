@@ -26,8 +26,8 @@ export const aiModel3 = {
     temperature: 0.5,
     max_tokens: 100,
     top_p:1,
-    frequency_penalty: 0.0,
-    presence_penalty: 0.0,
+    frequency_penalty: 0.4,
+    presence_penalty: 0.1,
     stop: "",
 };
 
@@ -37,7 +37,7 @@ export const aiModel4 = {
     temperature: 1,
     max_tokens: 100,
     top_p:1,
-    frequency_penalty: 0.0,
-    presence_penalty: 0.0,
+    frequency_penalty: 0.6,
+    presence_penalty: 0.2,
     stop: "",
 };
