@@ -1,43 +1,21 @@
-// General Model to answer questions
+// General strict Model to answer questions
 export const aiModel1 = {
     model: "text-davinci-003",
     temperature: 0,
-    max_tokens: 100,
+    max_tokens: 2000,
     top_p:1,
     frequency_penalty: 0,
     presence_penalty: 0,
     stop: "",
 };
 
-// Coding Model to answer questions
+// General strict Model to Q&A
 export const aiModel2 = {
-    model: "code-davinci-002",
+    model: "text-davinci-003",
     temperature: 0,
-    max_tokens: 64,
+    max_tokens: 100,
     top_p:1,
     frequency_penalty: 0,
     presence_penalty: 0,
-    stop: "",
-};
-
-// Coding Model QnA
-export const aiModel3 = {
-    model: "text-davinci-003",
-    temperature: 0.5,
-    max_tokens: 100,
-    top_p:1,
-    frequency_penalty: 0.4,
-    presence_penalty: 0.1,
-    stop: "",
-};
-
-// Coding Model Translation
-export const aiModel4 = {
-    model: "text-davinci-003",
-    temperature: 1,
-    max_tokens: 100,
-    top_p:1,
-    frequency_penalty: 0.6,
-    presence_penalty: 0.2,
     stop: "",
 };

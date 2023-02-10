@@ -1,6 +1,6 @@
 import bot from './public/ai_icon2.png';
 import user from './assets/user.svg';
-import { aiModel1,aiModel2,aiModel3,aiModel4 } from './public/ai_models';
+import { aiModel1, aiModel2 } from './public/ai_models';
 
 // Ai model to send with default values
 var aiModelToSend = {
@@ -93,15 +93,7 @@ const handleSubmit = async (e) => {
       aiModelToSend = aiModel1;
       //console.log(comboBox.selectedIndex);
       break;
-    case 1:
-      aiModelToSend = aiModel3;
-      //console.log(comboBox.selectedIndex);
-      break;
-    case 2:
-      aiModelToSend = aiModel4
-      //console.log(comboBox.selectedIndex);
-      break;
-    case 3:
+      case 1:
       aiModelToSend = aiModel2;
       //console.log(comboBox.selectedIndex);
       break;
